@@ -1,0 +1,84 @@
+#!/bin/sh
+
+cd "$(dirname "$0")"
+cd ..
+TOPDIR=`pwd`
+
+install -d -m0755 build-doc
+
+if command -v dpkg >/dev/null; then
+    for package in python-dev python-pip python-virtualenv doxygen ditaa ant; do
+	if [ "$(dpkg --status -- $package|sed -n 's/^Status: //p')" != "install ok installed" ]; then
+            # add a space after old values
+	    missing="${missing:+$missing }$package"
+	fi
+    done
+    if [ -n "$missing" ]; then
+	echo "$0: missing required packages, please install them:" 1>&2
+	echo "sudo apt-get install $missing"
+	exit 1
+    fi
+elif command -v yum >/dev/null; then
+    for package in python-devel python-pip python-virtualenv doxygen ditaa ant libxml-devel libxslt-devel; do
+	if ! rpm -q $package >/dev/null ; then
+		missing="${missing:+$missing }$package"
+	fi
+    done
+    if [ -n "$missing" ]; then
+        echo "$0: missing required packages, please install them:" 1>&2
+        echo "yum install $missing"
+        exit 1
+    fi
+else
+    for command in virtualenv doxygen ant ditaa; do
+	command -v "$command" > /dev/null;
+	ret_code=$?
+	if [ $ret_code -ne 0 ]; then
+            # add a space after old values
+	    missing="${missing:+$missing }$command"
+	fi
+    done
+    if [ -n "$missing" ]; then
+	echo "$0: missing required command, please install them:" 1>&2
+	echo "$missing"
+	exit 1
+    fi
+fi
+
+# Don't enable -e until after running all the potentially-erroring checks
+# for availability of commands
+set -e
+
+cat src/osd/PG.h src/osd/PG.cc | doc/scripts/gen_state_diagram.py > doc/dev/peering_graph.generated.dot
+
+cd build-doc
+
+[ -z "$vdir" ] && vdir="./virtualenv"
+
+if [ ! -e $vdir ]; then
+    virtualenv --no-site-packages $vdir
+fi
+$vdir/bin/pip install --quiet -r ../admin/doc-requirements.txt
+
+install -d -m0755 \
+    output/html \
+    output/man
+PYTHONPATH=`pwd`/../src/pybind $vdir/bin/sphinx-build -a -n -b dirhtml -d doctrees ../doc output/html
+$vdir/bin/sphinx-build -a -b man -d doctrees ../doc output/man
+
+#
+# Build and install JavaDocs
+#
+JAVADIR=$TOPDIR/src/java
+
+# Clean and build JavaDocs
+rm -rf $JAVADIR/doc
+ant -buildfile $JAVADIR/build.xml docs
+
+# Create clean target directory
+JAVA_OUTDIR=output/html/api/libcephfs-java/javadoc
+rm -rf $JAVA_OUTDIR
+mkdir $JAVA_OUTDIR
+
+# Copy JavaDocs to target directory
+cp -a $JAVADIR/doc/* $JAVA_OUTDIR/

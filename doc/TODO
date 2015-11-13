@@ -1,0 +1,20 @@
+TODO for Taiwan
+================
+
+檔案儲存 => filestore, 這是術語
+糾正聯盟配置文件中的錯誤之處，並提交給上游；
+
+
+TODO for English
+================
+
+Cache Tier modes, do compare in table, include these column at least:
+	cache-mode
+	Description
+	Usage scene
+	Consistency
+
+Internal mechanism of federated radosgw config, or the lowest(needed pools
+at least) configuration for it.
+
+Missed config option in doc, compares to list of 'ceph daemon osd.0 config show'
