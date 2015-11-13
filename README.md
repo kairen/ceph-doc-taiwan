@@ -39,10 +39,10 @@ eselect python set python2.7
 ln -sf /usr/bin/python2.7 /usr/bin/python
 ```
 
-* ditaa 圖片無法翻譯為中文，因為渲染時的字體問題還沒有解決；
+* ditaa 圖片無法翻譯為中文，因為渲染時的字體問題還沒有解決。
 
 ### 編譯步驟
-目前已經 Ceph 專案部分 Build 工具移至本 git，可以使用以下指令進行編譯：
+目前已經將 Ceph 專案的 Build 工具移至本 git，可以使用以下指令進行編譯：
 * 執行 admin 目錄底下的```build-doc```開始建立 html 檔案。
 ```
 admin/build-doc
