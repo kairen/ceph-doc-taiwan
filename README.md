@@ -1,5 +1,5 @@
 # Ceph 中文翻譯
-本文件主要是從```drunkard/ceph-Chinese-doc```進行繁體中文翻譯，並針對新版本做更新與修正為翻譯部分。
+本翻譯主要是從```drunkard/ceph-Chinese-doc```進行繁體中文翻譯，並針對新版本做更新與修正，未翻譯部分也會漸漸完成。
 
 ### 參與貢獻
 1. 在 ```Github``` 上 ```fork``` 到自己的 Repository，例如：```<User>/ceph-doc-taiwan.git```，然後 ```clone```到 local 端，並設定 Git 使用者資訊。
@@ -30,10 +30,6 @@ git push
  ```
 
 ### 編譯
-編譯好的網站位於： https://github.com/drunkard/ceph-readable-doc/tree/master/output/html
-編譯環境的配置會比較麻煩，若不需要自己編譯可以直接閱讀上面連結。
-
-
 Java 虛擬機應該用 ```oracle-jdk-bin-1.8``` 或 ```oracle-jdk-bin-1.7`` ，使用 jre 會缺少必要的lib檔案。
 
 ### 問題
@@ -43,16 +39,20 @@ eselect python set python2.7
 ln -sf /usr/bin/python2.7 /usr/bin/python
 ```
 
-* ditaa 圖片不不能翻譯為中文，因為渲染時的字體問題還沒有解決；
+* ditaa 圖片無法翻譯為中文，因為渲染時的字體問題還沒有解決；
 
 ### 編譯步驟
-這些檔案是從```Ceph```原始碼中的```doc/```目錄翻譯而來，其結構未變，所以您仍然可以用原始文件
-的構建方法構建此文件。只需用此repository的```ceph-doc```目錄替換ceph repository的```doc```目錄，具體步驟如下：
+目前已經 Ceph 專案部分 Build 工具移至本 git，可以使用以下指令進行編譯：
+* 執行 admin 目錄底下的```build-doc```開始建立 html 檔案。
+```
+admin/build-doc
+```
+> 當編譯完成，就會產生一個輸出目錄```build-doc/output```，將輸出檔案拷貝到 HTTP Server 就可以了。
 
-* 首先```git clone git://github.com/drunkard/docs_zh.git```，然後 ```git clone git://github.com/ceph/ceph.git```。
-* 然後把Ceph原始碼裡的```doc```目錄備份為```doc-orig```，然後把這個Repository的```ceph-doc ```目錄連結為原Ceph Repository的```doc```。
-* 執 行Ceph Repository 裡面的admin目錄下的```build-doc```開始建立文件。
 * 執行```serve-doc```，就可以透過 [HTTP](http://localhost:8080/) 方式閱讀文件了。
+```
+admin/serve-doc
+```
 
 
 ### 文件編寫風格
