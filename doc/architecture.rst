@@ -105,12 +105,12 @@ Ceph 依賴於 Ceph 客戶端和 OSD，因為它們知道叢集的拓撲，這�
 #. **監視器狀態圖（The Monitor Map）：** 包含叢集的 ``fsid`` 、位置、名稱、IP 位址和 Port，也包括目前 \
    epoch、此狀態圖何時建立與最近修改時間。要查看監視器狀態圖，使用 ``ceph mon dump`` 指令。
 
-#. **OSD 狀態圖：** 包含叢集 ``fsid`` 、此狀態圖何時建立、最近修改時間、儲存池（Pools）列表 \ 
-   、副本數量、放置群組（PG）數量、 OSD 列表與其狀態（如``up`` 、 ``in`` ）。要查看 OSD 狀態圖，使用\ 
+#. **OSD 狀態圖：** 包含叢集 ``fsid`` 、此狀態圖何時建立、最近修改時間、儲存池（Pools）列表 \
+   、副本數量、放置群組（PG）數量、 OSD 列表與其狀態（如``up`` 、 ``in`` ）。要查看 OSD 狀態圖，使用 \
    ``ceph osd dump`` 指令。
 
 #. **放置群組狀態圖（The PG Map）：** 包含放置群組版本、其時間戳記、最新的 OSD epoch、佔用率\
-   以及各放置群組詳細，如放置群組 ID 、 `up set` 、 `acting set` 、 PG 狀態（如\ 
+   以及各放置群組詳細，如放置群組 ID 、 `up set` 、 `acting set` 、 PG 狀態（如\
    ``active+clean``），和各儲存池的資料使用情況統計。
 
 #. **CRUSH Map：** 包含儲存裝置列表、故障域樹狀結構（如裝置、主機、機架、row、機房等等），\
@@ -119,8 +119,8 @@ Ceph 依賴於 Ceph 客戶端和 OSD，因為它們知道叢集的拓撲，這�
    ``crushtool -d {comp-crushmap-filename} -o {decomp-crushmap-filename}`` 反編\
    譯；然後就可以用``cat`` 或編輯器查看。
 
-#. **MDS 狀態圖（The MDS Map）：** 包含當前 MDS 狀態圖的 epoch、建立於何時與最近修改時間，還包含了儲 \
-   存 metadata 的儲存池、metadata 伺服器列表、還有哪些 metadata 伺服器是``up`` 且``in`` 的。 \
+#. **MDS 狀態圖（The MDS Map）：** 包含當前 MDS 狀態圖的 epoch、建立於何時與最近修改時間，還包含了儲\
+   存 metadata 的儲存池、metadata 伺服器列表、還有哪些 metadata 伺服器是``up`` 且``in`` 的。\
    要查看 MDS 狀態圖，執行 ``ceph mds dump`` 。
 
 各狀態圖維護著各自運作狀態的變更， Ceph 監視器維護著一份叢集狀態圖（Cluster Map）的主拷貝，包括叢\
