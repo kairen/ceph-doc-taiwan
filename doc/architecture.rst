@@ -125,8 +125,7 @@ Ceph 依賴於 Ceph 客戶端和 OSD，因為它們知道叢集的拓撲，這�
 ~~~~~~~~~~~~
 
 Ceph 客戶端讀取或寫入資料前，必須先連接到某個 Ceph 監視器，獲得最新的叢集狀態副本。一\
-個 Ceph 儲存叢集只需要單個監視器就能運行，但這樣會有單點故障問題（即如果此監視器當機， \
- Ceph 客戶端就不能讀取與寫入資料了）。
+個 Ceph 儲存叢集只需要單個監視器就能運行，但這樣會有單點故障問題（即如果此監視器當機，Ceph 客戶端就不能讀取與寫入資料了）。
 
 為增強可靠性和容錯能力，Ceph 支援監視器叢集；在一個監視器叢集內，延時以及其它錯誤\
 會導致一到多個監視器滯後於叢集當前狀態，因此 Ceph 各監視器行程必須就叢集的當\
@@ -1346,7 +1345,7 @@ Ceph FS 从数据中分离出了元数据、并存储于 MDS ，文件数据存�
 
 
 .. _RADOS - A Scalable, Reliable Storage Service for Petabyte-scale Storage Clusters: http://ceph.com/papers/weil-rados-pdsw07.pdf
-.. _Paxos 演算法: http://en.wikipedia.org/wiki/Paxos_(computer_science)
+.. _Paxos: http://en.wikipedia.org/wiki/Paxos_(computer_science)
 .. _監視器（Monitor）組態參考: ../rados/configuration/mon-config-ref
 .. _監控 OSD 和放置群組（PG）: ../rados/operations/monitoring-osd-pg
 .. _心跳檢查: ../rados/configuration/mon-osd-interaction

@@ -1,8 +1,8 @@
 .. ditaa:: 
            /------------------\         /----------------\
-           |   admin - node   |         |      node1     |
+           |    admin-node    |         |      node1     |
            |                  +-------->+ cCCC           |
-           |   ceph - deploy  |         |    mon.node1   |
+           |    ceph-deploy   |         |    mon.node1   |
            \---------+--------/         \----------------/
                      |
                      |                  /----------------\
