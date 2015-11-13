@@ -1,5 +1,5 @@
 ==========
- CRUSH 图
+ CRUSH Map
 ==========
 
 :abbr:`CRUSH (Controlled Replication Under Scalable Hashing)` 算法通过计算数\

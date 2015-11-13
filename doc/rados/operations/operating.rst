@@ -1,5 +1,5 @@
 ==========
- 操纵集群
+ 操作叢集
 ==========
 
 .. index:: Upstart; operating a cluster

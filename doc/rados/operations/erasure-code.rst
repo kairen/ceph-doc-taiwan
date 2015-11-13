@@ -1,5 +1,5 @@
 ========
- 纠删码
+ 抹除碼
 ========
 
 A Ceph pool is associated to a type to sustain the loss of an OSD
