@@ -86,11 +86,11 @@ Ceph 節點上建立物件複製來確保資料安全和高可靠性；為保證
 CRUSH 簡介
 ~~~~~~~~~~
 
-Ceph 客户端和 OSD 守护进程都用 :abbr:`CRUSH (Controlled Replication Under \
-Scalable Hashing)` 算法来按需计算对象的位置信息，而不是查询某个集中的表。和以往方\
-法相比， CRUSH 的数据管理机制更好，它很干脆地把某些工作丢给集群内的所有客户端和 \
-OSD 来处理，因此具有极大的伸缩性。 CRUSH 用智能数据复制确保弹性，更能适应超大规模存\
-储。下列几段描述了 CRUSH 如何工作，更详细的机制请参阅论文： \
+Ceph 客戶端和 OSD 背景行程都用 :abbr:`CRUSH (Controlled Replication Under \
+Scalable Hashing)` 演算法來依需計算物件的位置資訊，而不是查詢某個集中的表單。和以往方\
+法相比， CRUSH 的資料管理機制更好，它很直接把某些工作丟給叢集內所有客戶端和 \
+OSD 來處理，因此具有極大的擴展性。 CRUSH 用智慧資料複製確保彈性，更能適應超大規模儲\
+存。下列幾段描述了CRUSH 如何工作，更詳細的機制請參閱論文： \
 `CRUSH - Controlled, Scalable, Decentralized Placement of Replicated Data`_ 。
 
 
@@ -99,32 +99,32 @@ OSD 来处理，因此具有极大的伸缩性。 CRUSH 用智能数据复制确
 叢集狀態圖（Cluster Map）
 ~~~~~~~~~~
 
-Ceph 依赖于 Ceph 客户端和 OSD ，因为它们知道集群的拓扑，这个拓扑由 5 张图共同描\
-述，统称为“集群运行图”：
+Ceph 依賴於 Ceph 客戶端和 OSD，因為它們知道叢集的拓撲，這個拓撲是由五張狀態圖共同描\
+述，統稱為“叢集狀態圖”：
 
-#. **监视器图：** 包含集群的 ``fsid`` 、位置、名字、地址和端口，也包括当前时间结、\
-   此图何时创建、最近修改时间。要查看监视器图，用 ``ceph mon dump`` 命令。
+#. **監視器狀態圖（The Monitor Map）：** 包含叢集的 ``fsid`` 、位置、名稱、IP 位址和 Port，也包括目前 \
+   epoch、此狀態圖何時建立與最近修改時間。要查看監視器狀態圖，使用 ``ceph mon dump`` 指令。
 
-#. **OSD 图：** 包含集群 ``fsid`` 、此图何时创建、最近修改时间、存储池列表、副本数\
-   量、归置组数量、 OSD 列表及其状态（如 ``up`` 、 ``in`` ）。要查看OSD运行图，用 \
-   ``ceph osd dump`` 命令。
+#. **OSD 狀態圖：** 包含叢集 ``fsid`` 、此狀態圖何時建立、最近修改時間、儲存池（Pools）列表\ 
+   、副本數量、放置群組（PG）數量、 OSD 列表與其狀態（如``up`` 、 ``in`` ）。要查看 OSD 狀態圖，使用 \
+   ``ceph osd dump`` 指令。
 
-#. **归置组图：** 包含归置组版本、其时间戳、最新的 OSD 图时间结、占满率、以及各归置\
-   组详情，像归置组 ID 、 `up set` 、 `acting set` 、 PG 状态（如 \
-   ``active+clean`` ），和各存储池的数据使用情况统计。
+#. **放置群組狀態圖（The PG Map）：** 包含放置群組版本、其時間戳記、最新的 OSD epoch、佔用率\
+   以及各放置群組詳細，如放置群組 ID 、 `up set` 、 `acting set` 、 PG 狀態（如 \
+   ``active+clean`` ），和各儲存池的資料使用情況統計。
 
-#. **CRUSH 图：** 包含存储设备列表、失败域树状结构（如设备、主机、机架、行、房间、\
-   等等）、和存储数据时如何利用此树状结构的规则。要查看 CRUSH 规则，执行 \
-   ``ceph osd getcrushmap -o {filename}`` 命令；然后用 \
-   ``crushtool -d {comp-crushmap-filename} -o {decomp-crushmap-filename}`` 反编\
-   译；然后就可以用 ``cat`` 或编辑器查看了。
+#. **CRUSH Map：** 包含儲存裝置列表、故障域樹狀結構（如裝置、主機、機架、row、機房\
+   等等），以及儲存資料時如何利用此樹狀結構的規則。要查看 CRUSH 規則，執行 \
+   ``ceph osd getcrushmap -o {filename}`` 指令；然後用 \
+   ``crushtool -d {comp-crushmap-filename} -o {decomp-crushmap-filename}`` 反編\
+   譯；然後就可以用``cat`` 或編輯器查看。
 
-#. **MDS 图：** 包含当前 MDS 图的时间结、此图创建于何时、最近修改时间，还包含了存\
-   储元数据的存储池、元数据服务器列表、还有哪些元数据服务器是 ``up`` 且 ``in`` 的。\
-   要查看 MDS 图，执行 ``ceph mds dump`` 。
+#. **MDS 狀態圖（The MDS Map）：** 包含當前 MDS 狀態圖的 epoch、建立於何時與最近修改時間，還包含了儲\
+   存 metadata 的儲存池、metadata 伺服器列表、還有哪些 metadata 伺服器是``up`` 且``in`` 的。 \
+   要查看 MDS 狀態圖，執行 ``ceph mds dump`` 。
 
-各运行图维护着各自运营状态的变更， Ceph 监视器维护着一份集群运行图的主拷贝，包括集\
-群成员、状态、变更、以及 Ceph 存储集群的整体健康状况。
+各狀態圖維護著各自運作狀態的變更， Ceph 監視器維護著一份叢集狀態圖（Cluster Map）的主拷貝，包括叢\
+集成員、狀態、變更以及 Ceph 儲存叢集的整體健康狀況。
 
 
 .. index:: high availability; monitor architecture
@@ -347,7 +347,7 @@ OSD 守护进程来扩展和维护高可靠性。 Ceph 的关键设计是自治�
 
 .. index:: architecture; pools
 
-关于存储池
+關於儲存池（Pools）
 ~~~~~~~~~~
 
 Ceph 存储系统支持“池”概念，它是存储对象的逻辑分区。
@@ -519,7 +519,7 @@ OSD 守护进程作为 *acting set* 的一部分，不一定总在 ``up`` 状态
 
 .. index:: architecture; Data Scrubbing
 
-数据一致性
+資料一致性
 ~~~~~~~~~~
 
 作为维护数据一致和清洁的一部分， OSD 也能洗刷归置组内的对象，也就是说， OSD 会比较\
@@ -532,7 +532,7 @@ OSD 守护进程作为 *acting set* 的一部分，不一定总在 ``up`` 状态
 
 .. index:: erasure coding
 
-纠删编码
+抹除編碼
 --------
 
 纠删码存储池把各对象存储为 ``K+M`` 个数据块，其中有 ``K`` 个数据块和 ``M`` \
@@ -906,7 +906,7 @@ OSD 上，两个存储 ``K`` 、一个存 ``M`` 。此归置组的 acting set �
 详情见\ `纠删码笔记`_\ 。
 
 
-缓存分级
+分層快取（Cache Tiering）
 --------
 
 对于后端存储层上的部分热点数据，缓存层能向 Ceph 客户端提供更好的 IO 性能。缓\
@@ -947,7 +947,7 @@ OSD 上，两个存储 ``K`` 、一个存 ``M`` 。此归置组的 acting set �
 
 .. index:: Extensibility, Ceph Classes
 
-扩展 Ceph
+擴展 Ceph
 ---------
 
 你可以用 'Ceph Classes' 共享对象类来扩展 Ceph 功能， Ceph 会动态地载入位于 \
@@ -982,7 +982,7 @@ CPU 和 RAM 资源，但是 Ceph 能。从心跳到互联、到重均衡、再�
 
 .. index:: Ceph Protocol, librados
 
-Ceph 协议
+Ceph 協定
 =========
 
 Ceph 客户端用原生协议和存储集群交互， Ceph 把此功能封装进了 ``librados`` 库，这样\
@@ -1072,7 +1072,7 @@ Ceph 客户端用原生协议和存储集群交互， Ceph 把此功能封装进
 
 .. index:: architecture; Striping
 
-数据条带化
+資料等量化（Striping）
 ----------
 
 存储设备都有吞吐量限制，它会影响性能和伸缩性，所以存储系统一般都支持\ `条带化`_\ \
@@ -1261,7 +1261,7 @@ Ceph 能额外运行多个 OSD 、 MDS 、和监视器来保证伸缩性和高�
 
 .. index:: architecture; Ceph Object Storage
 
-Ceph 对象存储
+Ceph 物件儲存
 -------------
 
 Ceph 对象存储守护进程是 ``radosgw`` ，它是一个 FastCGI 服务，提供了 \
@@ -1283,7 +1283,7 @@ Ceph 对象存储守护进程是 ``radosgw`` ，它是一个 FastCGI 服务，�
 
 .. index:: Ceph Block Device; block device; RBD; Rados Block Device
 
-Ceph 块设备
+Ceph 區塊裝置
 -----------
 
 Ceph 块设备把一个设备映像条带化到集群内的多个对象，其中各对象映射到一个归置组并分布\
@@ -1303,7 +1303,7 @@ Ceph 块设备搭配 Qemu 和``libvirt`` 来支持 OpenStack 和 CloudStack ，�
 
 .. index:: Ceph FS; Ceph Filesystem; libcephfs; MDS; metadata server; ceph-mds
 
-Ceph 文件系统
+Ceph 檔案系統
 -------------
 
 Ceph 文件系统（ Ceph FS ）是与 POSIX 兼容的文件系统服务，坐落于基于对象的 Ceph 存\
@@ -1354,26 +1354,26 @@ Ceph FS 从数据中分离出了元数据、并存储于 MDS ，文件数据存�
 
 
 .. _RADOS - A Scalable, Reliable Storage Service for Petabyte-scale Storage Clusters: http://ceph.com/papers/weil-rados-pdsw07.pdf
-.. _Paxos: http://en.wikipedia.org/wiki/Paxos_(computer_science)
-.. _监视器配置参考: ../rados/configuration/mon-config-ref
-.. _监控 OSD 和归置组: ../rados/operations/monitoring-osd-pg
-.. _心跳: ../rados/configuration/mon-osd-interaction
-.. _监控 OSD: ../rados/operations/monitoring-osd-pg/#monitoring-osds
+.. _Paxos 演算法: http://en.wikipedia.org/wiki/Paxos_(computer_science)
+.. _監視器（Monitor）組態參考: ../rados/configuration/mon-config-ref
+.. _監控 OSD 和放置群組（PG）: ../rados/operations/monitoring-osd-pg
+.. _心跳檢查: ../rados/configuration/mon-osd-interaction
+.. _監控 OSD: ../rados/operations/monitoring-osd-pg/#monitoring-osds
 .. _CRUSH - Controlled, Scalable, Decentralized Placement of Replicated Data: http://ceph.com/papers/weil-crush-sc06.pdf
-.. _数据洗刷: ../rados/configuration/osd-config-ref#scrubbing
-.. _报告互联失败: ../rados/configuration/mon-osd-interaction#osds-report-peering-failure
-.. _互联失败排障: ../rados/troubleshooting/troubleshooting-pg#placement-group-down-peering-failure
-.. _Ceph 认证和授权: ../rados/operations/auth-intro/
-.. _硬件推荐: ../install/hardware-recommendations
-.. _网络配置参考: ../rados/configuration/network-config-ref
-.. _条带化: http://en.wikipedia.org/wiki/Data_striping
+.. _資料擦洗（scrubbing）: ../rados/configuration/osd-config-ref#scrubbing
+.. _回報互聯失敗: ../rados/configuration/mon-osd-interaction#osds-report-peering-failure
+.. _互聯失敗排除故障: ../rados/troubleshooting/troubleshooting-pg#placement-group-down-peering-failure
+.. _Ceph 認證與授權: ../rados/operations/auth-intro/
+.. _硬體推薦: ../install/hardware-recommendations
+.. _網路組態參考: ../rados/configuration/network-config-ref
+.. _資料等量化（striping）: http://en.wikipedia.org/wiki/Data_striping
 .. _RAID: http://en.wikipedia.org/wiki/RAID
 .. _RAID 0: http://en.wikipedia.org/wiki/RAID_0#RAID_0
-.. _Ceph 对象存储: ../radosgw/
-.. _REST 风格: http://en.wikipedia.org/wiki/RESTful
-.. _纠删码笔记: https://github.com/ceph/ceph/blob/40059e12af88267d0da67d8fd8d9cd81244d8f93/doc/dev/osd_internals/erasure_coding/developer_notes.rst
-.. _缓存分级: ../rados/operations/cache-tiering
-.. _调整存储池: ../rados/operations/pools#set-pool-values
+.. _Ceph 物件儲存: ../radosgw/
+.. _REST 風格: http://en.wikipedia.org/wiki/RESTful
+.. _抹除碼筆記: https://github.com/ceph/ceph/blob/40059e12af88267d0da67d8fd8d9cd81244d8f93/doc/dev/osd_internals/erasure_coding/developer_notes.rst
+.. _分層快取: ../rados/operations/cache-tiering
+.. _調整儲存池: ../rados/operations/pools#set-pool-values
 .. _Kerberos: http://en.wikipedia.org/wiki/Kerberos_(protocol)
-.. _Cephx 配置指南: ../rados/configuration/auth-config-ref
-.. _用户管理: ../rados/operations/user-management
+.. _Cephx 組態指南: ../rados/configuration/auth-config-ref
+.. _使用者管理: ../rados/operations/user-management
