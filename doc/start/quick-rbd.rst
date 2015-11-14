@@ -8,11 +8,11 @@
 .. note:: Ceph 块设备也叫 :term:`RBD` 或 :term:`RADOS` 块设备。
 
 
-.. ditaa::
+.. ditaa:: 
            /------------------\         /----------------\
-           |    Admin Node    |         |   ceph client  |
+           |    Admin Node    |         |   ceph–client  |
            |                  +-------->+ cCCC           |
-           |    ceph -deploy  |         |      ceph      |
+           |    ceph–deploy   |         |      ceph      |
            \------------------/         \----------------/
 
 
