@@ -101,7 +101,7 @@ SSD 時，循序讀寫效能很重要，在為多個 OSD 儲存 journal。 時�
 
 - **分區對齊（Partition Alignment）：** 採用了SSD 的一個常見問題是人們喜歡分區，卻常常忽略了分區對齊，這會導致 SSD 的資料傳輸速率慢很多，所以請確保分區​​對齊了。
 
-SSD 用於物件儲存太昂貴了，但是把 OSD 的 journal 存到 SSD、把物件資料儲存到獨立的硬碟可以明顯提升效能。 ``osd journal`` 選項的預設值是 ``/var/lib/ceph/osd/$cluster-$id/journal``，你可以把它掛載到一個 SATA 或 SSD 分區，這樣它就不再是和物件儲存一樣儲存在同一個硬碟上的檔案了
+SSD 用於物件儲存太昂貴了，但是把 OSD 的 journal 存到 SSD、把物件資料儲存到獨立的硬碟可以明顯提升效能。 ``osd journal`` 選項的預設值是 ``/var/lib/ceph/osd/$cluster-$id/journal``，你可以把它掛載到一個 SATA 或 SSD 分區，這樣它就不再是和物件儲存一樣儲存在同一個硬碟上的檔案了。
 
 提升 CephFS 檔案系統效能的一種方法是從 CephFS 檔案內容裡分離出 metadata。 Ceph \
 提供了預設的 ``metadata`` 儲存池來儲存 CephFS metadata，所以你不需要給 CephFS \
