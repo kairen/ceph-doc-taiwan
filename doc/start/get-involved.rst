@@ -23,14 +23,14 @@
 |                      | 工作時間。 ``#ceph`` 頻道適合叢集維護員和使用者，  	 |                                               |
 |                      | ``#ceph-devel`` 適合 Ceph 開發人員。            	 |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **使用者郵件列表**     | Ask and answer user-related questions by      	 |                                             	 |
+| **使用者郵件列表**	   | Ask and answer user-related questions by      	 |                                             	 |
 |                      | subscribing to the email list at                | - `User Subscribe`_                           |
 |                      | ceph-users@ceph.com. You can opt out of         | - `User Unsubscribe`_                         |
 |                      | the email list at any time by unsubscribing.    | - `Gmane for Users`_                          |
 |                      | A simple email is all it takes! If you would    |                                               |
 |                      | like to view the archives, go to Gmane.         |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **開發者郵件列表**     | Keep in touch with developer activity by      	 |                                               |
+| **開發者郵件列表** 	   | Keep in touch with developer activity by      	 |                                               |
 |                      | subscribing to the email list at                | - `Devel Subscribe`_                          |
 |                      | ceph-devel@vger.kernel.org. You can opt out of  | - `Devel Unsubscribe`_                        |
 |                      | the email list at any time by unsubscribing.    | - `Gmane for Developers`_                     |
