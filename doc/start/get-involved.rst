@@ -7,30 +7,36 @@
 在 Ceph 社群有激動人心的時刻，加入吧！
 
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| 頻道 				   | 描述                                          	 | 聯絡訊息                                       |
+| 頻道                 | 描述                                             | 聯絡訊息                                       |
 +======================+=================================================+===============================================+
-| **部落格**      	   | 經常檢查部落格來追踪 Ceph 進展和重要通知。     	     | http://ceph.com/community/blog/               |
+| **部落格**            | 經常檢查部落格來追踪 Ceph 進展和重要通知。          | http://ceph.com/community/blog/               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **Planet Ceph**      | 看看 Planet Ceph 频道收集的部落格文章，發現有意  	 | http://ceph.com/community/planet-ceph/        |
-|                      | 思的​​故事、訊息與大家的經驗分享。                    |                                               |
+| **Planet Ceph**      | Check the blog aggregation on Planet Ceph for   | http://ceph.com/community/planet-ceph/        |
+|                      | interesting stories, information and            |                                               |
+|                      | experiences from the community.                 |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **Wiki**             | Wiki 裡有更多與社群、開發相關的話題，在這裡你        | https://wiki.ceph.com/                        |
-|                      | 可以了解 Ceph 未來的藍圖、面談與開發者年會等。       |                                               |
+| **Wiki**             | Check the Ceph Wiki is a source for more        | https://wiki.ceph.com/                        |
+|                      | community and development related topics. You   |                                               |
+|                      | can find there information about blueprints,    |                                               |
+|                      | meetups, the Ceph Developer Summits and more.   |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **IRC**              | 隨著您對 Ceph 的深入了解，您也許有問題或回饋     	 |                                               |
-|                      | 給 Ceph 開發團隊。Ceph 開發者經常在 IRC 的        	 | - **網域名稱:** ``irc.oftc.net``               |
-|                      | ``#ceph`` 頻道，尤其是美國太平洋標準時區白天       	 | - **頻道:** ``#ceph`` 及 ``#ceph-devel``     	 |
-|                      | 工作時間。 ``#ceph`` 頻道適合叢集維護員和使用者，  	 |                                               |
-|                      | ``#ceph-devel`` 適合 Ceph 開發人員。            	 |                                               |
+| **IRC**              | As you delve into Ceph, you may have questions  |                                               |
+|                      | or feedback for the Ceph development team. Ceph | - **Domain:** ``irc.oftc.net``                |
+|                      | developers are often available on the ``#ceph`` | - **Channels:** ``#ceph`` and ``#ceph-devel`` |
+|                      | IRC channel particularly during daytime hours   |                                               |
+|                      | in the US Pacific Standard Time zone.           |                                               |
+|                      | While ``#ceph`` is a good starting point for    |                                               |
+|                      | cluster operators and users, there is also      |                                               |
+|                      | ``#ceph-devel`` dedicated for Ceph developers.  |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **使用者郵件列表**	   | Ask and answer user-related questions by      	 |                                             	 |
+| **User List**        | Ask and answer user-related questions by        |                                               |
 |                      | subscribing to the email list at                | - `User Subscribe`_                           |
 |                      | ceph-users@ceph.com. You can opt out of         | - `User Unsubscribe`_                         |
 |                      | the email list at any time by unsubscribing.    | - `Gmane for Users`_                          |
 |                      | A simple email is all it takes! If you would    |                                               |
 |                      | like to view the archives, go to Gmane.         |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **開發者郵件列表** 	   | Keep in touch with developer activity by      	 |                                               |
+| **Devel List**       | Keep in touch with developer activity by        |                                               |
 |                      | subscribing to the email list at                | - `Devel Subscribe`_                          |
 |                      | ceph-devel@vger.kernel.org. You can opt out of  | - `Devel Unsubscribe`_                        |
 |                      | the email list at any time by unsubscribing.    | - `Gmane for Developers`_                     |
