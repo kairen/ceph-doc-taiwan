@@ -1,15 +1,16 @@
 .. _Get Involved:
 
-===================
+=====================================
  加入 Ceph 社群！
-===================
+=====================================
 
 在 Ceph 社群有激動人心的時刻，加入吧！
 
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| 頻道                 | 描述                                             | 聯絡訊息                                       |
+|Channel               | Description                                     | Contact Info                                  |
 +======================+=================================================+===============================================+
-| **部落格**            | 經常檢查部落格來追踪 Ceph 進展和重要通知。          | http://ceph.com/community/blog/               |
+| **Blog**             | Check the Ceph Blog_ periodically to keep track | http://ceph.com/community/blog/               |
+|                      | of Ceph progress and important announcements.   |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
 | **Planet Ceph**      | Check the blog aggregation on Planet Ceph for   | http://ceph.com/community/planet-ceph/        |
 |                      | interesting stories, information and            |                                               |
