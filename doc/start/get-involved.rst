@@ -1,70 +1,84 @@
 .. _Get Involved:
 
-=================
+===================
  加入 Ceph 社群！
-=================
+===================
 
 在 Ceph 社群有激動人心的時刻，加入吧！
 
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| 頻道                 | 描述                                            | 聯絡訊息                                      |
+| 頻道                 | 描述                                             | 聯絡訊息                                       |
 +======================+=================================================+===============================================+
-| **博客**             | 经常检查博客来跟踪 Ceph 进展和重要通告。        | http://ceph.com/community/blog/               |
+| **部落格**            | 經常檢查部落格來追踪 Ceph 進展和重要通知。          | http://ceph.com/community/blog/               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **Planet Ceph**      | 看看 Planet Ceph 频道收集的博客文章，发现有意   | http://ceph.com/community/planet-ceph/        |
-|                      | 思的故事、信息、和大家的经验分享。              |                                               |
+| **Planet Ceph**      | 看看 Planet Ceph 频道收集的部落格文章，發現有意     | http://ceph.com/community/planet-ceph/        |
+|                      | 思的​​故事、訊息與大家的經驗分享。                    |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **Wiki**             | Wiki 里有更多和社区、开发相关的话题，在这里你   | https://wiki.ceph.com/                        |
-|                      | 可以了解 Ceph 未来的蓝图、面谈、开发者峰会等。  |                                               |
+| **Wiki**             | Wiki 裡有更多與社群、開發相關的話題，在這裡你        | https://wiki.ceph.com/                        |
+|                      | 可以了解 Ceph 未來的藍圖、面談與開發者年會等。       |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **IRC**              | 随着您对 Ceph 的深入了解，您也许有问题或回馈    |                                               |
-|                      | 给 Ceph 开发团队。 Ceph 开发者经常在 IRC 的     | - **域名：** ``irc.oftc.net``                 |
-|                      | ``#ceph`` 频道，尤其是美国太平洋标准时区白天    | - **频道：** ``#ceph`` and ``#ceph-devel``    |
-|                      | 工作时间。 ``#ceph`` 频道适合集群操作员和用户， |                                               |
-|                      | ``#ceph-devel`` 适合 Ceph 开发人员。            |                                               |
+| **IRC**              | 隨著您對 Ceph 的深入了解，您也許有問題或回饋         |                                               |
+|                      | 給 Ceph 開發團隊。Ceph 開發者經常在 IRC 的         | - **網域名稱:** ``irc.oftc.net``               |
+|                      | ``#ceph`` 頻道，尤其是美國太平洋標準時區白天        | - **頻道:** ``#ceph`` 及 ``#ceph-devel``       |
+|                      | 工作時間。 ``#ceph`` 頻道適合叢集維護員和使用者，    |                                               |
+|                      | ``#ceph-devel`` 適合 Ceph 開發人員。              |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **用户邮件列表**     | 订阅 ceph-users@ceph.com  后可以提问或回答用    | - `用户订阅`_                                 |
-|                      | 户相关的问题，也可以随时退定，只需一封邮件即可  | - `用户退订`_                                 |
-|                      | 搞定！要是想看存档，可以到 Gmane 。             | - `Gmane 用户频道`_                           |
+| **使用者郵件列表**     | Ask and answer user-related questions by        |                                               |
+|                      | subscribing to the email list at                | - `User Subscribe`_                           |
+|                      | ceph-users@ceph.com. You can opt out of         | - `User Unsubscribe`_                         |
+|                      | the email list at any time by unsubscribing.    | - `Gmane for Users`_                          |
+|                      | A simple email is all it takes! If you would    |                                               |
+|                      | like to view the archives, go to Gmane.         |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **开发邮件列表**     | 你可以订阅位于  ceph-devel@vger.kernel.org 的   | - `开发订阅`_                                 |
-|                      | 邮件列表来和开发者保持联系，也可以随时离开。您  | - `开发退订`_                                 |
-|                      | 也可以到 Gmane 查看历史存档。                   | - `Gmane 开发者频道`_                         |
+| **開發者郵件列表**     | Keep in touch with developer activity by        |                                               |
+|                      | subscribing to the email list at                | - `Devel Subscribe`_                          |
+|                      | ceph-devel@vger.kernel.org. You can opt out of  | - `Devel Unsubscribe`_                        |
+|                      | the email list at any time by unsubscribing.    | - `Gmane for Developers`_                     |
+|                      | A simple email is all it takes! If you would    |                                               |
+|                      | like to view the archives, go to Gmane.         |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **提交邮件列表**     | 订阅 ceph-commit@ceph.com 后能收到提交通知邮    | - `提交订阅`_                                 |
-|                      | 件，同样，只需一封邮件即可随时退定。            | - `提交退订`_                                 |
-|                      |                                                 | - `邮件列表存档`_                             |
+| **Commit List**      | Subscribe to ceph-commit@ceph.com to get        |                                               |
+|                      | commit notifications via email. You can opt out | - `Commit Subscribe`_                         |
+|                      | of the email list at any time by unsubscribing. | - `Commit Unsubscribe`_                       |
+|                      | A simple email is all it takes!                 | - `Mailing list archives`_                    |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **质检邮件列表**     | 订阅这个列表可关注软件品质相关的问题，同样，    | - `QA 订阅`_                                  |
-|                      | 只需一封邮件即可随时退定。                      | - `QA 退订`_                                  |
-|                      |                                                 | - `邮件列表存档`_                             |
+| **QA List**          | For Quality Assurance (QA) related activities   |                                               |
+|                      | subscribe to this list. You can opt out         | - `QA Subscribe`_                             |
+|                      | of the email list at any time by unsubscribing. | - `QA Unsubscribe`_                           |
+|                      | A simple email is all it takes!                 | - `Mailing list archives`_                    |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **社区邮件列表**     | 这里讨论与 Ceph 用户委员会和其它社区相关的      | - `社区订阅`_                                 |
-|                      | 话题，同样，只需一封邮件即可随时退定。          | - `社区退订`_                                 |
-|                      |                                                 | - `邮件列表存档`_                             |
+| **Community List**   | For all discussions related to the Ceph User    |                                               |
+|                      | Committee and other community topics. You can   | - `Community Subscribe`_                      |
+|                      | opt out of the email list at any time by        | - `Community Unsubscribe`_                    |
+|                      | unsubscribing. A simple email is all it takes!  | - `Mailing list archives`_                    |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **软件缺陷跟踪**     | 您可以使用问题\ `跟踪系统`_\ 来帮助我们提       | http://tracker.ceph.com/projects/ceph         |
-|                      | 升 Ceph 稳定性，或提出新功能申请。              |                                               |
+| **Bug Tracker**      | You can help keep Ceph production worthy by     | http://tracker.ceph.com/projects/ceph         |
+|                      | filing and tracking bugs, and providing feature |                                               |
+|                      | requests using the Bug Tracker_.                |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-| **源码**             | 如果您想参与开发、问题修正，或者想要最新源      |                                               |
-|                      | 码，您可以从  http://github.com 获取，参        | - http://github.com/ceph/ceph                 |
-|                      | 见 `Ceph 源码`_\ 如何从 github 克隆源码。       | - http://ceph.com/download                    |
+| **Source Code**      | If you would like to participate in             |                                               |
+|                      | development, bug fixing, or if you just want    | - http://github.com/ceph/ceph                 |
+|                      | the very latest code for Ceph, you can get it   | - http://ceph.com/download                    |
+|                      | at http://github.com. See `Ceph Source Code`_   |                                               |
+|                      | for details on cloning from github.             |                                               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
 
 
-.. _开发订阅: mailto:majordomo@vger.kernel.org?body=subscribe+ceph-devel
-.. _开发退订: mailto:majordomo@vger.kernel.org?body=unsubscribe+ceph-devel
-.. _用户订阅: mailto:ceph-users-join@lists.ceph.com
-.. _用户退订: mailto:ceph-users-leave@lists.ceph.com
-.. _社区订阅: mailto:ceph-community-join@lists.ceph.com
-.. _社区退订: mailto:ceph-community-leave@lists.ceph.com
-.. _提交订阅: mailto:ceph-commit-join@lists.ceph.com
-.. _提交退订: mailto:ceph-commit-leave@lists.ceph.com
-.. _QA 订阅: mailto:ceph-qa-join@lists.ceph.com
-.. _QA 退订: mailto:ceph-qa-leave@lists.ceph.com
-.. _Gmane 开发者频道: http://news.gmane.org/gmane.comp.file-systems.ceph.devel
-.. _Gmane 用户频道: http://news.gmane.org/gmane.comp.file-systems.ceph.user
-.. _邮件列表存档: http://lists.ceph.com/
-.. _博客: http://ceph.com/community/blog/
-.. _跟踪系统: http://tracker.ceph.com/
-.. _Ceph 源码: http://github.com/ceph/ceph
+
+.. _Devel Subscribe: mailto:majordomo@vger.kernel.org?body=subscribe+ceph-devel
+.. _Devel Unsubscribe: mailto:majordomo@vger.kernel.org?body=unsubscribe+ceph-devel
+.. _User Subscribe: mailto:ceph-users-join@lists.ceph.com
+.. _User Unsubscribe: mailto:ceph-users-leave@lists.ceph.com
+.. _Community Subscribe: mailto:ceph-community-join@lists.ceph.com
+.. _Community Unsubscribe: mailto:ceph-community-leave@lists.ceph.com
+.. _Commit Subscribe: mailto:ceph-commit-join@lists.ceph.com
+.. _Commit Unsubscribe: mailto:ceph-commit-leave@lists.ceph.com
+.. _QA Subscribe: mailto:ceph-qa-join@lists.ceph.com
+.. _QA Unsubscribe: mailto:ceph-qa-leave@lists.ceph.com
+.. _Gmane for Developers: http://news.gmane.org/gmane.comp.file-systems.ceph.devel
+.. _Gmane for Users: http://news.gmane.org/gmane.comp.file-systems.ceph.user
+.. _Mailing list archives: http://lists.ceph.com/
+.. _Blog: http://ceph.com/community/blog/
+.. _Tracker: http://tracker.ceph.com/
+.. _Ceph Source Code: http://github.com/ceph/ceph
+
