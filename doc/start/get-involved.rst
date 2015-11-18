@@ -7,10 +7,9 @@
 在 Ceph 社群有激動人心的時刻，加入吧！
 
 +----------------------+-------------------------------------------------+-----------------------------------------------+
-|Channel               | Description                                     | Contact Info                                  |
+| 頻道                 | 描述                                            | 聯絡訊息                                      |
 +======================+=================================================+===============================================+
-| **Blog**             | Check the Ceph Blog_ periodically to keep track | http://ceph.com/community/blog/               |
-|                      | of Ceph progress and important announcements.   |                                               |
+| **部落格**           | 經常檢查部落格來追踪 Ceph 進展和重要通知。      | http://ceph.com/community/blog/               |
 +----------------------+-------------------------------------------------+-----------------------------------------------+
 | **Planet Ceph**      | Check the blog aggregation on Planet Ceph for   | http://ceph.com/community/planet-ceph/        |
 |                      | interesting stories, information and            |                                               |
@@ -88,4 +87,3 @@
 .. _Blog: http://ceph.com/community/blog/
 .. _Tracker: http://tracker.ceph.com/
 .. _Ceph Source Code: http://github.com/ceph/ceph
-
