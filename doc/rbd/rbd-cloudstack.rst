@@ -1,5 +1,5 @@
 =====================
- 块设备与 CloudStack
+ 區塊裝置與 CloudStack
 =====================
 
 CloudStack 4.0 及以上版本可以通过 ``libvirt`` 使用 Ceph 块设备， ``libvirt`` 会配\

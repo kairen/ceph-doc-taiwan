@@ -1,5 +1,5 @@
 =======================
- Librbd 的 Python 接口
+ Librbd 的 Python 介面
 =======================
 
 .. highlight:: python

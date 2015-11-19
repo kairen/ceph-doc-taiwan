@@ -1,5 +1,5 @@
 =================================
- 通过 ``libvirt`` 使用 Ceph RBD
+ 透過 ``libvirt`` 使用 Ceph RBD
 =================================
 
 .. index:: Ceph Block Device; livirt

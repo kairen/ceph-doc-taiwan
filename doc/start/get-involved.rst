@@ -52,7 +52,6 @@
 +----------------------+------------------------------------------------------+--------------------------------------------+
 
 
-
 .. _開發者訂閱: mailto:majordomo@vger.kernel.org?body=subscribe+ceph-devel
 .. _開發者取消訂閱: mailto:majordomo@vger.kernel.org?body=unsubscribe+ceph-devel
 .. _使用者訂閱: mailto:ceph-users-join@lists.ceph.com

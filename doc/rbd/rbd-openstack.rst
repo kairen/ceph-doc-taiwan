@@ -1,5 +1,5 @@
 ====================
- 块设备与 OpenStack
+ 區塊裝置與 OpenStack
 ====================
 
 .. index:: Ceph Block Device; OpenStack

@@ -1,5 +1,5 @@
 ================
- QEMU 与块设备
+ QEMU 與區塊裝置
 ================
 
 .. index:: Ceph Block Device; QEMU KVM

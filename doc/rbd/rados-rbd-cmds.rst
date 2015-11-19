@@ -1,5 +1,5 @@
 ============
- 块设备命令
+ 區塊裝置指令
 ============
 
 .. index:: Ceph Block Device; image management
