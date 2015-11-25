@@ -36,19 +36,19 @@ Ceph 文件位於和原始碼同一資源庫內的 ``ceph/doc`` 目錄下，關�
 
 最常用的貢獻方法是\ `分支並拉入`_\ 。為此，必須先做到：
 
-#. 在本地安装 git 。在 Debian/Ubuntu 下用此命令： ::
+#. 在本地安装 git 。在 Debian/Ubuntu 下用此指令： ::
 
 	sudo apt-get install git
 
-   在 Fedora 下用此命令： ::
+   在 Fedora 下用此指令： ::
 
 	sudo yum install git
 
-   在 CentOS/RHEL 下用此命令： ::
+   在 CentOS/RHEL 下用此指令： ::
 
 	sudo yum install git
 
-#. 在 ``.gitconfig`` 配置文件里写好自己的名字和邮件地址。 ::
+#. 在 ``.gitconfig`` 配置檔案裡寫好自己的名字和郵件地址。 ::
 
 	[user]
 	   email = {your-email-address}
@@ -60,36 +60,36 @@ Ceph 文件位於和原始碼同一資源庫內的 ``ceph/doc`` 目錄下，關�
 	git config --global user.email johndoe@example.com
 
 
-#. 创建 `github`_ 帐户（假如没有的话）。
+#. 建立 `github`_ 帳號（如果沒有的話）。
 
-#. 创建 Ceph 项目的分支，参见 https://github.com/ceph/ceph 。
+#. 建立 Ceph 專案的分支，參閱 https://github.com/ceph/ceph 。
 
-#. 把已分支项目克隆到本机。
-
-
-Ceph 文档按主要组件来分类组织。
-
-- **Ceph 存储集群：**\ Ceph 存储集群文档位于 ``doc/rados`` 目录下；
-
-- **Ceph 块设备：**\ Ceph 块设备文档位于 ``doc/rbd`` 目录下；
-
-- **Ceph 对象存储：**\ Ceph 对象存储文档位于 ``doc/radosgw`` 目录下；
-
-- **Ceph 文件系统：**\ Ceph 文件系统文档位于 ``doc/cephfs`` 目录下；
-
-- **安装（快速）：**\ 快速入门文档位于 ``doc/start`` 目录下；
-
-- **安装（手动）：**\ 手动安装文档位于 ``doc/install`` 目录下；
-
-- **手册页：**\ 手册源码位于 ``doc/man`` 目录下；
-
-- **开发者：**\ 开发者文档位于 ``doc/dev`` 目录下；
-
-- **图片：**\ 如果你想上传文档，如 JPEG 或 PNG 文件，应该放到 ``doc/images`` \
-  目录下。
+#. 把已分支專案 clone 到本機。
 
 
-进入分支
+Ceph 檔案依照主要元件來分類組織。
+
+- **Ceph 儲存叢集：**\ Ceph 儲存叢集文件位於 ``doc/rados`` 目錄下；
+
+- **Ceph 區塊裝置：**\ Ceph 區塊裝置文件位於 ``doc/rbd`` 目錄下；
+
+- **Ceph 物件儲存：**\ Ceph 物件儲存文件位於 ``doc/radosgw`` 目錄下；
+
+- **Ceph 檔案系統：**\ Ceph 檔案系統文件位於 ``doc/cephfs`` 目錄下；
+
+- **安裝（快速）：**\ 快速入门文件位於 ``doc/start`` 目錄下；
+
+- **安裝（手動）：**\ 手动安装文件位於 ``doc/install`` 目錄下；
+
+- **手冊頁：**\ 手冊頁原始碼位於 ``doc/man`` 目錄下；
+
+- **開發者：**\ 開發者文件位於 ``doc/dev`` 目錄下；
+
+- **圖片：**\ 如果你想上傳檔案，如 JPEG 或 PNG 檔案，應該要放到 ``doc/images`` \
+  目錄下。
+
+
+進入分支
 --------
 
 如果只是细小的变更，像修正排版错误、或换一种措辞，直接提交到 ``master`` 分支即\
@@ -123,7 +123,7 @@ http://tracker.ceph.com/issues/4000 。
 	git checkout -b wip-doc-{your-branch-name}
 
 
-开始更改
+開始更改
 --------
 
 修改文档很简单，打开 restructuredText 文件、修改、保存即可。相关的语法请参考 \
@@ -147,7 +147,7 @@ http://tracker.ceph.com/issues/4000 。
 还必须从其他文档删除与之相关的引用。
 
 
-构建文档源码
+構建文檔原始碼
 ------------
 
 要想构建文档，先进入 ``ceph`` 库目录： ::
@@ -317,7 +317,7 @@ CentOS/RHEL7 下 `ditaa`_ 依赖下列软件包：
 安装好所有这些包之后，就可以按照\ ``构建文档源码``\ 里的步骤构建文档了。
 
 
-提交变更
+提交變更
 --------
 
 Ceph文档的提交虽然简单，却遵循着严格的惯例：
@@ -395,7 +395,7 @@ Ceph文档的提交虽然简单，却遵循着严格的惯例：
 最后，点击 **File->Start git gui** 打开图形界面。
 
 
-推送变更
+推送變更
 --------
 
 你完成一或多个提交后，必须从本地推送到位于 ``github`` 的仓库。某些图形化工具\
@@ -408,13 +408,13 @@ Ceph文档的提交虽然简单，却遵循着严格的惯例：
 	git push
 
 
-发出接收请求
+發出接收請求
 ------------
 
 前面已经说过了，你可以依照\ `分支并拉入`_\ 方法共享文档。
 
 
-通知相关人员
+通知相關人員
 ------------
 
 发出接收请求后，还需通知相关人员。通常，文档的接收请求应该发给 `John Wilkins`_ 。
