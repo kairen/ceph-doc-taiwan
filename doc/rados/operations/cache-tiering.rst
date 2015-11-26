@@ -131,17 +131,10 @@ Cache tier 支援了幾個設定選項，可按下列指令設定： ::
 
 分級存取隨著時間允許 Ceph，來確認一個 Ceph client 是否在一段時間內存取了某個物件一次或多次（“age” vs “temperature”）。
 
-The ``min_read_recency_for_promote`` defines how many HitSets to check for the
-existence of an object when handling a read operation. The checking result is
-used to decide whether to promote the object asynchronously. Its value should be
-between 0 and ``hit_set_count``. If it's set to 0, the object is always promoted.
-If it's set to 1, the current HitSet is checked. And if this object is in the
-current HitSet, it's promoted. Otherwise not. For the other values, the exact
-number of archive HitSets are checked. The object is promoted if the object is
-found in any of the most recent ``min_read_recency_for_promote`` HitSets.
+``min_read_recency_for_promote`` 定義了多少 HitSets 以檢查
+處理讀取操作時存在的物件。檢查結果被用來決定是否以異步方式推動物件。 其值應介於 0 到 ``hit_set_count`` 值之間。如果設置為 0，則該物件總是被推動。如果它被設置為 1，則當前的 HitSet 會被檢查。如果這個物件是當前 HitSet 的話，它會被推動，反之則不會推動。對於其他的值，歸檔 HitSets 的準確數量進行檢查。如果物件被找到最新的 ``min_read_recency_for_promote`` HitSets，這個物件就會被推動。
 
-A similar parameter can be set for the write operation, which is
-``min_write_recency_for_promote``. ::
+類似的參數可以進行寫入操作的設定，在 ``min_write_recency_for_promote`` 參數進行設定。 ::
 
   ceph osd pool set {cachepool} min_read_recency_for_promote 1
   ceph osd pool set {cachepool} min_write_recency_for_promote 1
