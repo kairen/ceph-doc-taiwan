@@ -37,7 +37,7 @@ Cache tiering agent 自動處理 cache tier 與 backing storage tier 之間的�
 
 - **回寫模式（Writeback Mode）：** 當管理員把 cache tier 設置為 ``writeback`` 模式时，Ceph client 會資料寫入 cache tier 並接收來自 cache tier 發送的 ACK；隨著時間的推移，寫入到 cache tier 中的資料會搬移到 storage tier 並從 cache tier 刷新掉。從概念上來說 cache tier 位於 backing storage tier 的前面，當 Ceph client 需要要讀取位於 storage tier 的資料時，cache tiering agent 會把這些資料搬移到 cache tier，然後再送往 Ceph client。此後，Ceph client 將與 caceh tier 進行 I/O 操作，直到資料不再被讀寫。此模式對於易變資料（熱資料）來說較為理想（如照片/視訊串流、事物資料等）。
 
-- **僅讀模式（Read-only Mode）：** 當管理員把 cache tier 設置為 ``readonly`` 模式时， Ceph 會直接把資料寫入後端。讀取時，Ceph 會把對應的物件從 backing tier 複製到 cache tier，將根據定義的策略與 ``dirty 物件``從 cache tier 移出。此模式適合不變的資料（冷資料），如社交網路上顯示的圖片與視訊、DNA 資料與 X-Ray 照片等，因為 cache tier 讀出的資料可能包含過期的資料，因此一致性較差。對易變資料不要用 ``readonly`` 模式。
+- **僅讀模式（Read-only Mode）：** 當管理員把 cache tier 設置為 ``readonly`` 模式时， Ceph 會直接把資料寫入後端。讀取時，Ceph 會把對應的物件從 backing tier 複製到 cache tier，將根據定義的策略與 ``dirty 物件`` 從 cache tier 移出。此模式適合不變的資料（冷資料），如社交網路上顯示的圖片與視訊、DNA 資料與 X-Ray 照片等，因為 cache tier 讀出的資料可能包含過期的資料，因此一致性較差。對易變資料不要用 ``readonly`` 模式。
 
 正因為所有的 Ceph client 都能用 Cache tiering，所以才能提升區塊設備、物件儲存、Ceph 檔案系統與原生的 I/O 效能的潛力。
 
