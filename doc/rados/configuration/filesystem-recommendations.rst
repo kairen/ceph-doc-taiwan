@@ -4,7 +4,7 @@
 
 .. index:: hard drive preparation
 
-准备硬盘
+準備硬體
 ========
 
 Ceph 注重数据安全，就是说， :term:`Ceph 客户端`\ 收到数据已写入存储器的通知时，数\
