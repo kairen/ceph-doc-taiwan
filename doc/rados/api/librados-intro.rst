@@ -1,5 +1,5 @@
 ===============
- librados 简介
+ librados 介紹
 ===============
 
 The :term:`Ceph Storage Cluster` provides the basic storage service that allows
